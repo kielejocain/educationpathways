@@ -1,0 +1,191 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>40-40-100</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  </head>
+  <body onLoad="javascript: initializeControls();">
+    <div class="nav">
+      <ul>
+        <li class="brand">
+          <a href="index.html">
+            <img class="brand" src="img/100_logo_tosize.png" alt="Brand">
+          </a>
+        </li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="explore_data.html" class="active">Explore the Data</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  <div class="container">
+    <h1 class="text-center grayfont">Explore the Data</h1>
+    <p>
+      Aesthetic wayfarers chillwave Odd Future. Master cleanse put a bird on it banh mi, yr Thundercats occupy roof party semiotics +1 Neutra typewriter. Normcore Tumblr dreamcatcher craft beer locavore. Aesthetic meh pug blog jean shorts food truck, cold-pressed banjo. Cliche four loko Echo Park, single-origin coffee 90's taxidermy mustache leggings sartorial Vice master cleanse stumptown photo booth. Direct trade meh aesthetic Thundercats American Apparel. Squid Etsy four loko locavore Neutra tote bag.
+    </p>
+  </div>
+  <div class="container">
+    <h3 class="bluefont">
+      Education Pathways
+    </h3>
+    <p>
+      Roast doppio, shop, milk, arabica robusta bar shop, turkish froth spoon coffee, variety espresso saucer shop that. Galão strong, decaffeinated, barista, con panna, arabica kopi-luwak wings cream strong viennese, caffeine foam decaffeinated black grinder. Extra so blue mountain coffee caramelization filter single shot caramelization shop saucer mocha dark variety. Froth saucer decaffeinated aromatic java decaffeinated irish trifecta, foam cinnamon, decaffeinated, cappuccino, siphon java mocha frappuccino americano kopi-luwak qui espresso strong steamed.
+    </p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <!-- <img class="img-responsive col-sm-3" src="http://placehold.it/100x200" alt="" /> -->
+        <div class="img-responsive col-sm-3" id="sankey-filter"></div>
+      <img class="img-responsive col-sm-9" src="http://placehold.it/500x200" alt="" />
+    </div>
+  </div>
+  <div class="container">
+    <h3 class="bluefont">
+      Time To Graduate
+    </h3>
+    <p>
+      Given the degree attained, how long does it take students to graduate?  In the following bar charts, we look at three groups: those that graduate from a four year institution, those that graduate from a two year institution, and those that attend a post-secondary school but do not obtain a degree.
+    </p>
+    <p>
+        In these graphs, "Calendar Months" refers to the time (in years) that passes between the first time a student enrolls and when they graduate or otherwise move on.  "Enrolled Months" discounts from this the time spent not enrolled in a school.
+    </p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <!--<img class="img-responsive col-sm-3" src="http://placehold.it/100x200" alt="" />-->
+        <!--<img class="img-responsive col-sm-2" src="http://placehold.it/100x100" alt="" />-->
+        <!--<img class="img-responsive col-sm-2" src="http://placehold.it/100x100" alt="" />-->
+        <!--<img class="img-responsive col-sm-2" src="http://placehold.it/100x100" alt="" />-->
+        <div id="td-4yr" class="img-responsive col-sm-4" >
+        <h4>Time Distribution<br/>4-year</h4>
+        </div>  <!-- 4-year -->
+        <div id="td-2yr" class="img-responsive col-sm-4" >
+            <h4>Time Distribution<br/>2-year</h4>
+        </div>  <!-- 2-year -->
+        <div id="td-hs" class="img-responsive col-sm-4" >
+            <h4>Time Distribution<br/>No Diploma</h4>
+        </div>  <!-- HS -->
+        <div class="container">
+          <h3 class="bluefont">
+            Graduation and Enrollment Rate Comparisons
+          </h3>
+          <p>
+              How does my high school or district compare to others in the state?  In these graphs, the circles fill according to the relative standing of the high school or district selected, subject to the filter chosen.  If a circle fills half way, the selected school or district is about average for Oregon.  Filling past that point indicates that the institution is performing at a higher-than-average rate.
+          </p>
+          <p>
+              As obtaining enough data to make a meaningful statement about rates is not always possible, we've had to remove some schools and districts from the list.  As better data becomes available, we hope to add schools and filters to the options to learn more about performance.
+          </p>
+        </div>
+        <div class="img-responsive col-sm-12" id="comparison-filter"></div>
+            <div class="dial col-sm-4" id="grad-rate"></div>
+            <div class="dial col-sm-4" id="four-rate"></div>
+            <div class="dial col-sm-4" id="two-rate"></div>
+            <div class="dial col-sm-4" id="poverty-rate"></div>
+            <div class="dial col-sm-4" id="post-enroll-rate"></div>
+            <div class="dial col-sm-4" id="HLAA-rate"></div>
+    </div>
+  </div>
+  <script src="js/comparisonDials.js"></script>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3 class="bluefont">
+          Maps
+        </h3>
+        <p>
+          Beta ramen channels investor. Termsheet handshake metrics backing early adopters return on investment strategy niche market buyer sales. Www.discoverartisans.com angel investor funding success early adopters crowdfunding freemium infographic release hackathon disruptive bandwidth niche market focus. Interaction design paradigm shift responsive web design handshake angel investor. Sales termsheet funding. First mover advantage validation A/B testing iteration hackathon responsive web design network effects freemium ramen leverage business-to-business twitter. Bootstrapping facebook launch party stock graphical user interface iteration branding freemium business-to-business funding client niche market www.discoverartisans.com.
+        </p>
+      </div>
+    </div>
+    <div class="row row-map">
+      <img class="img-responsive col-sm-6" src="http://placehold.it/300x200" alt="" />
+      <img class="img-responsive col-sm-6" src="http://placehold.it/300x200" alt="" />
+    </div>
+    <div class="row row-map">
+      <img class="img-responsive col-sm-6" src="http://placehold.it/300x200" alt="" />
+      <img class="img-responsive col-sm-6" src="http://placehold.it/300x200" alt="" />
+    </div>
+    <div class="row row-map">
+      <img class="img-responsive col-sm-6" src="http://placehold.it/300x200" alt="" />
+      <img class="img-responsive col-sm-6" src="http://placehold.it/300x200" alt="" />
+    </div>
+    <div class="row row-map">
+      <img class="img-responsive col-sm-6" src="http://placehold.it/300x200" alt="" />
+      <img class="img-responsive col-sm-6" src="http://placehold.it/300x200" alt="" />
+    </div>
+  </div>
+  <div class="footer">
+    <center>
+      <h2>Join the conversation</h2>
+      <p>
+        <div class="socialbuttons"><p>
+        <a href="https://twitter.com/HackOregon"><i class="fa fa-twitter fa-4x"></i></a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="mailto:catherine@hackoregon.org"><i class="fa fa-envelope-o fa-4x"></i></a></p>
+        </div>
+    </center>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script src="./js/timeDistributionGraph.js"></script>
+    <script src="./js/buildFilterControls.js"></script>
+  <script>
+      var sankeyFilters = {
+          gender: '',
+          ethnicity: '',
+          poverty: '',
+          lep: '',
+          meet_math: '',
+          meet_read: '',
+          district: '',
+          hs_name: '',
+          query: function () {
+              var params = [];
+              for (var key in this) {
+                  if (typeof this[key] !== 'function' && this[key]) {
+                      params.push('&' + key + '=' + this[key]);
+                  }
+              }
+              return params.join();
+          },
+          redraw: function() {
+              alert("Drew the Sankey diagram!");
+          }
+      };
+
+      var comparisonFilters = {
+          gender: '',
+          ethnicity: '',
+          poverty: '',
+          lep: '',
+          meet_math: '',
+          meet_read: '',
+          district: '',
+          hs_name: 'Grant_High_School',
+          query: function () {
+              var params = [];
+              for (var key in this) {
+                  if (typeof this[key] !== 'function' && this[key]) {
+                      params.push('&' + key + '=' + this[key]);
+                  }
+              }
+              return params.join(separator="");
+          },
+          redraw: function() {
+              updateData();
+          }
+      };
+
+      function initializeControls() {
+          buildSankeyFilterControls("sankey-filter", sankeyFilters);
+          buildComparisonFilterControls("comparison-filter", comparisonFilters);
+          createDistributionGraph("#td-4yr", "data/4yrbardata.csv");
+          createDistributionGraph("#td-2yr", "data/2yrbardata.csv");
+          createDistributionGraph("#td-hs", "data/triedbardata.csv");
+      }
+  </script>
+  </body>
+</html>
